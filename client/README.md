@@ -19,17 +19,6 @@ The library provides types that automatically pick a backend based on whether th
 - Integration with the [Secret portal](https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Secret.html) if sandboxed
 - Provide API to migrate from host secrets to sandboxed ones
 
-## D-Bus API migration
-
-The D-Bus backend uses zbus 6. Applications that pass connections to oo7 must
-use the matching version of zbus, available through `oo7::zbus`. Low-level
-D-Bus values use `zbus::wire::Variant` and `OwnedVariant` in place of
-`zvariant::Value` and `OwnedValue`.
-
-The `tokio` and `async-std` feature names are unchanged. The latter uses zbus's
-runtime-independent `default-rt` feature. Keyring files and the PAM socket
-protocol continue to use `zgvariant`.
-
 ## Examples
 
 ### Basic usage
